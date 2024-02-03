@@ -1,5 +1,5 @@
 # Description: Generate a class with its .hpp and .cpp files
-# Usage: class_gen class_name
+# Usage: class_gen ClassName
 # Example: class_gen AwesomeClass
 # Output: AwesomeClass.hpp and AwesomeClass.cpp in cannonical form
 # Note: The class will be generated in the current directory
@@ -70,7 +70,7 @@ hpp_class_gen()
 class_gen()
 {
     if [ $# -ne 1 ]; then
-        echo "Usage: class_gen class_name"
+        echo "Usage: class_gen ClassName"
         return
     fi
     hpp_class_gen $1

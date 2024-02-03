@@ -16,6 +16,8 @@
 #       - If name starts with a lowercase letter, it will be considered as a normal source file.
 #            - an empty .cpp is generated.
 
+
+# generate a the class's .cpp file with the given name 
 cpp_class_gen()
 {
     echo "#include \"$1.hpp\"" >> $2
@@ -56,7 +58,7 @@ cpp_class_gen()
     echo "" >> $2
     echo -e "\033[32m$2 created!\033[0m"
 }
-
+# generate a the class's .hpp file with the given name
 hpp_class_gen()
 {
     echo "#pragma once" >> $2
@@ -78,7 +80,7 @@ hpp_class_gen()
     echo "" >> $2
     echo -e "\033[32m$2 created!\033[0m"
 }
-
+# generate a Makefile for the project based on the given parameters
 mkf_gen()
 {
     echo "NAME = $NAME" >> Makefile
@@ -116,7 +118,7 @@ mkf_gen()
     echo "" >> Makefile
     echo -e "\033[32mMakefile created!\033[0m"
 }
-
+# main function for the cpp project generator
 cpp_gen()
 {
     echo "__Cpp project generator__"
@@ -135,7 +137,7 @@ cpp_gen()
 
     echo "Enter files to create (separated by spaces):"
     read FILES
-
+    
     EMPTYCPPFILES=()
     CPPFILES=()
     HPPFILES=()
@@ -146,14 +148,14 @@ cpp_gen()
     INCDIR=""
 
     mkdir $DIRNAME && cd $DIRNAME
-
+    # create the subdirectories if they were requested
     if [[ $SUBDIRS == "y" ]]; then
         SRCDIR="src/"
         OBJDIR="obj/"
         INCDIR="inc/"
         mkdir src inc
     fi
-
+    # detect the files to create
     for FILE in $FILES; do
         if [[ $FILE == "Makefile" ]]; then
             MAKEFILE=1
@@ -166,7 +168,7 @@ cpp_gen()
             EMPTYCPPFILES+=("$SRCDIR$FILE.cpp")
         fi
     done
-
+    # initialize the git repository if it was requested and generate the .gitignore file
     if [[ $GIT == "y" ]]; then
         git init
         touch .gitignore
@@ -181,7 +183,7 @@ cpp_gen()
     fi
 
     echo -e "\033[32mGenerating files...\033[0m"
-
+    # generate the main.cpp file if it was requested
     if [[ $MAINFILE != "" ]]; then
         touch $MAINFILE
         for FILE in ${HPPFILES[@]}; do
@@ -197,8 +199,7 @@ cpp_gen()
         echo "" >> $MAINFILE
         echo -e "\033[32m$MAINFILE created!\033[0m"
     fi
-
-
+    # generate the empty .cpp files if they were requested
     for FILE in ${EMPTYCPPFILES[@]}; do
         touch $FILE
         echo "" >> $FILE
@@ -210,19 +211,19 @@ cpp_gen()
         echo "" >> $FILE
         echo -e "\033[32m$FILE created!\033[0m"
     done
-
+    # generate the .cpp files for the classes if they were requested
     for FILE in ${CPPFILES[@]}; do
         touch $FILE
         BASENAME=$(basename $FILE .cpp)
         cpp_class_gen $BASENAME $FILE
     done
-
+    # generate the .hpp files for the classes if they were requested
     for FILE in ${HPPFILES[@]}; do
         touch $FILE
         BASENAME=$(basename $FILE .hpp)
         hpp_class_gen $BASENAME $FILE
     done
-
+    # generate the Makefile if it was requested
     if [[ $MAKEFILE == 1 ]]; then
         touch Makefile
         mkf_gen

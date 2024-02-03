@@ -36,18 +36,26 @@ this will generate a .hpp and .cpp file in canonical form
 
 ### To make and test your cpp days exercise quickly
 ```bash
-$> mk 2
+➜ ls
+CppModule01.pdf ex00            ex01            ex02            ex03            ex04            ex05            ex06
+➜ mk 6
+c++ -std=c++98 -Wall -Wextra -Werror -c main.cpp
+c++ -std=c++98 -Wall -Wextra -Werror -c Harl.cpp
+c++ -std=c++98 -Wall -Wextra -Werror main.o Harl.o -o HarlFilter
+➜ ls
+CppModule01.pdf HarlFilter      ex00            ex01            ex02            ex03            ex04            ex05            ex06
+➜ ./HarlFilter
 ```
-this will compile and run the 2nd exercise (ex02) in the current directory
+this will compile exercise (ex06) from the current directory
 then it will copy the executable to the current directory.
 
 ```bash
-$> mk fclean 3
+➜ mk fclean 6
 ```
 this will call make fclean of the 3rd exercise (ex03) in the current directory
 
 ## Author
-- anammal
+- anassnammal
 
 ## License
 this is just a script, I made to avoid repetitive work, feel free to use it and modify it as you like

@@ -1,4 +1,8 @@
-#!/bin/bash
+# Description: Generate a class with its .hpp and .cpp files
+# Usage: class_gen class_name
+# Example: class_gen AwesomeClass
+# Output: AwesomeClass.hpp and AwesomeClass.cpp in cannonical form
+# Note: The class will be generated in the current directory
 
 cpp_class_gen()
 {
@@ -63,11 +67,12 @@ hpp_class_gen()
     echo -e "\033[32m$1.hpp created!\033[0m"
 }
 
-if [ $# -ne 1 ] ; then
-    echo "Usage: $0 <class_name>"
-    exit 1
-fi
-
-cpp_class_gen $1
-
-hpp_class_gen $1
+class_gen()
+{
+    if [ $# -ne 1 ]; then
+        echo "Usage: class_gen class_name"
+        return
+    fi
+    hpp_class_gen $1
+    cpp_class_gen $1
+}

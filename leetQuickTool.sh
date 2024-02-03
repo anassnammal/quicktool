@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo "  This script is a quick tool for 1337 students"
 echo "  It will install a set of tools that are useful for cpp projects"
@@ -20,5 +20,7 @@ echo "  Installing..."
 cat cpp_starter.sh >> ~/.zshrc
 cat ClassGen.sh >> ~/.zshrc
 cat extended_make.sh >> ~/.zshrc
+
+source ~/.zshrc
 
 echo -e "\033[32m  toots injected into ~/.zshrc\033[0m"

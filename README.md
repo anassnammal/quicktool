@@ -14,24 +14,23 @@ script to automate some repetitive work in cpp
 ### To start a new C++ project and generate required files
 ```bash
 $> cpp_gen
-$> Enter project name:
-$> executable_name
+Enter project name:
+## type the project name, it will be used for executable name
 Enter project dirname:
-$> dir_name
+## type the project directory name
 Do you want to create a git repository? (y/n)
-$> y to create a git repository and generate a .gitignore file, n to skip
+## y to init a git repository, n to skip
 Do you want separate directories for headers and sources? (y/n)
-$> y to create separate directories for headers and sources, n to skip
+## y to create separate directories for headers and sources, n to skip
 Enter files to create (separated by spaces):
-$> Makefile main utils Class1 Class2
+## type the file names you want to create (e.g. Makefile main Class1 Class2 utils ...)
 ```
-NOTE: to generate the required files, you simply need to enter the file names separated by spaces.
-    if the File name begins with a capital letter, the script will generate a .hpp and .cpp in canonical form,
-    otherwise, it will generate an empty .cpp file only.
+NOTE: if the project consists of classes, you may only type the class names in UpperCamelCase, the script will automatically generate the .hpp and .cpp files in canonical form
+the same goes for the Makefile, it will be generated with the correct dependencies
 
 ### To generate a new C++ class in canonical form
 ```bash
-$> class_gen <class_name>
+$> class_gen Class1
 ```
 this will generate a .hpp and .cpp file in canonical form
 
@@ -46,8 +45,9 @@ then it will copy the executable to the current directory.
 $> mk fclean 3
 ```
 this will call make fclean of the 3rd exercise (ex03) in the current directory
-```
-
 
 ## Author
 - anammal
+
+## License
+this is just a script, I made to avoid repetitive work, feel free to use it and modify it as you like

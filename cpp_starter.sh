@@ -164,7 +164,7 @@ if [[ $GIT == "y" ]]; then
     touch .gitignore
     echo ".DS_Store" >> .gitignore
     echo "a.out" >> .gitignore
-    echo "obj" >> .gitignore
+    echo "obj/" >> .gitignore
     echo "$NAME" >> .gitignore
     echo "*.o" >> .gitignore
     echo ".vscode/" >> .gitignore
@@ -193,7 +193,7 @@ fi
 for FILE in ${EMPTYCPPFILES[@]}; do
     touch $FILE
     echo "" >> $FILE
-    echo "void foo(void)" >> $FILE
+    echo "void $FILE(void)" >> $FILE
     echo "{" >> $FILE
     echo "    // std::cout << \"Hello world!\" << std::endl;" >> $FILE
     echo "    return ;" >> $FILE

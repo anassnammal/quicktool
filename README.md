@@ -71,7 +71,7 @@ this will compile exercise (ex06) from the current directory
 then it will copy the executable to the current directory.
 
 ```bash
-➜ mk fclean 6
+➜ mk fclean 3
 ```
 this will call make fclean of the 3rd exercise (ex03) in the current directory
 

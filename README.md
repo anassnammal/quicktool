@@ -6,14 +6,14 @@ script to automate some repetitive work in cpp
 
 ## Features
 1. Start a new C++ project and generate required files
-2. Generate a new C++ class in cannical form
+2. Generate a new C++ class in canonical form
 3. A little make extension to make and test your cpp days exercise quickly
 
 ## how to use the features
 
 ### To start a new C++ project and generate required files
 ```bash
-➜  cpp git:(main) ✗ cpp_gen
+➜ cpp_gen
 __Cpp project generator__
 Enter project name:
 foo ## type the project name, it will be used for executable name
@@ -25,6 +25,9 @@ Do you want separate directories for headers and sources? (y/n)
 y ## y to create separate directories for headers and sources, n to skip
 Enter files to create (separated by spaces):
 Makefile main Foo Class utils ## type the file names you want to create (class names in UpperCamelCase)
+```
+output :
+```
 Initialized empty Git repository in /Users/anammal/Desktop/cpp/cpp/foodir/.git/
 .gitignore created!
 src/main.cpp created!
@@ -42,6 +45,9 @@ the same goes for the Makefile, it will be generated with the correct dependenci
 ### To generate a new C++ class in canonical form
 ```bash
 ➜ cpp_gen Foo Bar
+```
+output
+```bash
 ./Foo.hpp created!
 ./Foo.cpp created!
 ./Bar.hpp created!

@@ -14,7 +14,7 @@
 #           main Makefile Animal Cat Dog
 #   NOTICE :
 #       - If you want to create a class, the name must start with a capital letter 
-#            - .hpp and .cpp is generated in cannonical form.
+#            - .hpp and .cpp is generated in canonical form.
 #       - If name starts with a lowercase letter, it will be considered as a normal source file.
 #            - an empty .cpp is generated.
 

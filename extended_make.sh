@@ -9,10 +9,10 @@ mk()
 {
     if [ $# -eq 1 ]; then
         make -C *$1
-        cp *$1/$(grep NAME= *$1/Makefile | cut -d '=' -f2 | tr -d ' ') .
+        cp *$1/$(grep NAME *$1/Makefile | head -1 | cut -d '=' -f2 | tr -d ' ') .
     elif [ $# -eq 2 ]; then
         if [ $1 == "fclean" ]; then
-            rm -rf *$2/$(grep NAME= *$2/Makefile | cut -d '=' -f2 | tr -d ' ')
+            rm -rf *$2/$(grep NAME *$2/Makefile | head -1 | cut -d '=' -f2 | tr -d ' ')
         fi
         make $1 -C *$2
     else

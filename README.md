@@ -2,7 +2,7 @@
 script to automate some repetitive work in cpp
 ## How to use
 1. Clone the repository
-2. Run the script (./leetQuickTools.sh)
+2. Run the script (./install.sh)
 
 ## Features
 1. Start a new C++ project and generate required files

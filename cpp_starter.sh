@@ -1,24 +1,5 @@
 #!/bin/bash
 
-# Description: C++ project generator
-# Example:
-#       Enter project name:
-#           Polymorphism
-#       Enter project dirname:
-#           ex00
-#       Do you want to create a git repository? (y/n)
-#           n
-#       Do you want separate directories for headers and sources? (y/n)
-#           n
-#       Enter files to create (separated by spaces):
-#           main Makefile Animal Cat Dog
-#   NOTICE :
-#       - If you want to create a class, the name must start with a capital letter 
-#            - .hpp and .cpp is generated in canonical form.
-#       - If name starts with a lowercase letter, it will be considered as a normal source file.
-#            - an empty .cpp is generated.
-
-
 # generate a the class's .cpp file with the given name 
 cpp_class_gen()
 {

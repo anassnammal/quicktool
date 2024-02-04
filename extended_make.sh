@@ -12,7 +12,10 @@ mk()
         cp *$1/$(grep NAME *$1/Makefile | head -1 | cut -d '=' -f2 | tr -d ' ') .
     elif [ $# -eq 2 ]; then
         if [ $1 == "fclean" ]; then
-            rm -rf *$2/$(grep NAME *$2/Makefile | head -1 | cut -d '=' -f2 | tr -d ' ')
+            BIN=*$2/$(grep NAME *$2/Makefile | head -1 | cut -d '=' -f2 | tr -d ' ')
+            if [ -f $BIN ]; then
+                rm -rf $BIN
+            fi
         fi
         make $1 -C *$2
     else

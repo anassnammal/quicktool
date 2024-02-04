@@ -28,7 +28,7 @@ cpp_class_gen()
     echo "{" >> $2
     echo "    if (this != &src)" >> $2
     echo "    {" >> $2
-    echo "        // std::cout << \"$1: Copy assignation operator called\" << std::endl;" >> $2
+    echo "        // std::cout << \"$1: Copy assignment operator called\" << std::endl;" >> $2
     echo "    }" >> $2
     echo "    return *this;" >> $2
     echo "}" >> $2

@@ -69,7 +69,7 @@ mkf_gen()
     echo "NAME = $NAME" >> Makefile
     echo "SRCS = $MAINFILE ${CPPFILES[@]}" >> Makefile
     echo "OBJS = \$(patsubst %.cpp, %.o, \$(SRCS))" >> Makefile
-    echo "INCS = ${CPPFILES[@]}" >> Makefile
+    echo "INCS = ${HPPFILES[@]}" >> Makefile
     echo "CPPFLAGS = -std=c++98 -Wall -Wextra -Werror" >> Makefile
     echo "CC = c++" >> Makefile
     echo "" >> Makefile

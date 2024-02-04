@@ -14,22 +14,22 @@ if [[ ! -f $TARGET ]]; then
     exit 1
 fi
 
-echo "Copying cpp_starter.sh to ~/.tools"
-mkdir -p ~/.tools
-cp cpp_starter.sh ~/.tools
+if [[ ! -f ~/.tools/cpp_starter.sh ]]; then
+    echo "Copying cpp_starter.sh to ~/.tools"
+    mkdir -p ~/.tools
+    cp cpp_starter.sh ~/.tools
+fi
 
-echo "Backing up $TARGET to $TARGET.bak"
-cp $TARGET $TARGET.bak
-
-echo "Injecting toots into $TARGET"
-echo "############CPP###STARTER##########" >> $TARGET
-echo "" >> $TARGET
-echo "alias cpp_gen=\"bash ~/.tools/cpp_starter.sh\"" >> $TARGET
-cat extended_make.sh >> $TARGET
-echo "" >> $TARGET
-echo "#################END###############" >> $TARGET
-
-source $TARGET
-
-echo -e "\033[32m  toots injected into $TARGET\033[0m"
-echo "you may need to restart your terminal for the changes to take effect"
+if ! grep -q "cpp_gen" $TARGET; then
+    echo "Backing up $TARGET to $TARGET.bak"
+    cp $TARGET $TARGET.bak
+    echo "Injecting cpp_gen and mk into $TARGET"
+    echo "############CPP###STARTER##########" >> $TARGET
+    echo "" >> $TARGET
+    echo "alias cpp_gen=\"bash ~/.tools/cpp_starter.sh\"" >> $TARGET
+    cat extended_make.sh >> $TARGET
+    echo "" >> $TARGET
+    echo "#################END###############" >> $TARGET
+    source $TARGET 2> /dev/null
+    echo "you may need to restart your terminal for the changes to take effect"
+fi

@@ -1,8 +1,13 @@
 # Cpp tools for repetitive work
 script to automate some repetitive work in cpp
+as a 1337:42 student, I found myself doing the same repetitive work over and over again, so I made this script to automate some of the work such as creating a new project, generating a new class, generating a makefile, and compiling the cpp days exercises quickly.
+
 ## How to use
-1. Clone the repository
-2. Run the script (./install.sh)
+```bash
+➜ git clone git@github.com:anassnammal/quicktool.git
+➜ cd quicktool
+➜ bash install.sh
+```
 
 ## Features
 1. Start a new C++ project and generate required files
@@ -10,10 +15,13 @@ script to automate some repetitive work in cpp
 3. A little make extension to make and test your cpp days exercise quickly
 
 ## how to use the features
-
+I hope the examples will be clear enough
 ### To start a new C++ project and generate required files
 ```bash
 ➜ cpp_gen
+```
+output :
+```
 __Cpp project generator__
 Enter project name:
 foo ## type the project name, it will be used for executable name
@@ -79,4 +87,4 @@ this will call make fclean of the 3rd exercise (ex03) in the current directory
 - anassnammal
 
 ## License
-this is just a script, I made to avoid repetitive work, feel free to use it and modify it as you like
+this is just a script I made to avoid repetitive work, feel free to use it and modify it as you like

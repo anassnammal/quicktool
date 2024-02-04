@@ -219,6 +219,6 @@ if [[ $MAKEFILE == 1 ]]; then
     mkf_gen
 fi
 
-echo -e "\033[32mProject generated!\033[0m"
+echo -e "\033[32m$NAME@$DIRNAME generated successfully!\033[0m"
 
 exit 0

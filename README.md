@@ -28,7 +28,7 @@ Makefile main Foo Class utils ## type the file names you want to create (class n
 ```
 output :
 ```
-Initialized empty Git repository in /Users/anammal/Desktop/cpp/cpp/foodir/.git/
+Initialized empty Git repository in /Users/user/cpp/foodir/.git/
 .gitignore created!
 src/main.cpp created!
 src/utils.cpp created!

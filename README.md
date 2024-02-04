@@ -13,24 +13,39 @@ script to automate some repetitive work in cpp
 
 ### To start a new C++ project and generate required files
 ```bash
-$> cpp_gen
+➜  cpp git:(main) ✗ cpp_gen
+__Cpp project generator__
 Enter project name:
-## type the project name, it will be used for executable name
+foo ## type the project name, it will be used for executable name
 Enter project dirname:
-## type the project directory name
+foodir ## type the project directory name
 Do you want to create a git repository? (y/n)
-## y to init a git repository, n to skip
+y ## y to init a git repository, n to skip
 Do you want separate directories for headers and sources? (y/n)
-## y to create separate directories for headers and sources, n to skip
+y ## y to create separate directories for headers and sources, n to skip
 Enter files to create (separated by spaces):
-## type the file names you want to create (e.g. Makefile main Class1 Class2 utils ...)
+Makefile main Foo Class utils ## type the file names you want to create (class names in UpperCamelCase)
+Initialized empty Git repository in /Users/anammal/Desktop/cpp/cpp/foodir/.git/
+.gitignore created!
+src/main.cpp created!
+src/utils.cpp created!
+src/Foo.cpp created!
+src/Class.cpp created!
+inc/Foo.hpp created!
+inc/Class.hpp created!
+Makefile created!
+Project generated!
 ```
 NOTE: if the project consists of classes, you may only type the class names in UpperCamelCase, the script will automatically generate the .hpp and .cpp files in canonical form
 the same goes for the Makefile, it will be generated with the correct dependencies
 
 ### To generate a new C++ class in canonical form
 ```bash
-$> class_gen Class1
+➜ cpp_gen Foo Bar
+./Foo.hpp created!
+./Foo.cpp created!
+./Bar.hpp created!
+./Bar.cpp created!
 ```
 this will generate a .hpp and .cpp file in canonical form
 
@@ -43,7 +58,7 @@ c++ -std=c++98 -Wall -Wextra -Werror -c main.cpp
 c++ -std=c++98 -Wall -Wextra -Werror -c Harl.cpp
 c++ -std=c++98 -Wall -Wextra -Werror main.o Harl.o -o HarlFilter
 ➜ ls
-CppModule01.pdf HarlFilter      ex00            ex01            ex02            ex03            ex04            ex05            ex06
+CppModule01.pdf *HarlFilter      ex00            ex01            ex02            ex03            ex04            ex05            ex06
 ➜ ./HarlFilter
 ```
 this will compile exercise (ex06) from the current directory

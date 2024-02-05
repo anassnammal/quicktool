@@ -82,7 +82,7 @@ mkf_gen()
         echo "$OBJDIR:" >> Makefile
         echo "	mkdir $OBJDIR" >> Makefile
         echo "" >> Makefile
-        echo "$OBJDIR%.o: $SRCDIR%.cpp ${HPPFILES[@]} $OBJDIR" >> Makefile
+        echo "$OBJDIR%.o: $SRCDIR%.cpp $OBJDIR" >> Makefile
         echo "	\$(CC) \$(CPPFLAGS) -c $< -I $INCDIR -o \$@" >> Makefile
     else
         echo "%.o: %.cpp ${HPPFILES[@]}" >> Makefile

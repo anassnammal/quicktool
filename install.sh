@@ -14,11 +14,9 @@ if [[ ! -f $TARGET ]]; then
     exit 1
 fi
 
-if [[ ! -f ~/.tools/cpp_starter.sh ]]; then
-    echo "Copying cpp_starter.sh to ~/.tools"
-    mkdir -p ~/.tools
-    cp cpp_starter.sh ~/.tools
-fi
+echo "Copying cpp_starter.sh to ~/.tools"
+mkdir -p ~/.tools
+cp cpp_starter.sh ~/.tools
 
 if ! grep -q "cpp_gen" $TARGET; then
     echo "Backing up $TARGET to $TARGET.bak"

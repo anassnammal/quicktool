@@ -48,7 +48,8 @@ sudo apt -y install lxinput
 sudo apt -y install lxrandr
 
 # Install lxhotkey
-sudo apt -y install lxhotkey
+sudo apt -y install xbindkeys
+xbindkeys --defaults > $HOME/.xbindkeysrc
 
 # Install lxshortcut
 sudo apt -y install lxshortcut

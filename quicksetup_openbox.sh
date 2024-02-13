@@ -3,16 +3,16 @@
 # This script is used to setup openbox for the first time on debian 12
 
 # Install xorg
-sudo apt install xorg
+sudo apt -y install xorg
 
 # Install openbox
-sudo apt install openbox
+sudo apt -y install openbox
 
 # Install obconf
-sudo apt install obconf
+sudo apt -y install obconf
 
 # Install obmenu
-sudo apt install obmenu
+sudo apt -y install obmenu
 
 # Install obmenu-generator
 sudo apt -y install obmenu-generator
